@@ -11,7 +11,7 @@ export const login = () => {
 			<input type="text" name="" id="" class="camapoTexto" placeholder="Correo">
 			<input type="password" pattern=".{6,}" name="" id="" class="camapoTexto" placeholder="Contraseña">
 			<button class="buttonIniciar"><a href="#">Iniciar sesion</a></button>
-			<p class="inicioGogle"><a href="#">Iniciar con Gogle</a></p>
+			<p class="inicioGogle"><a href="#" id="Google">Iniciar con Gogle</a></p>
 			<p class="registrarse">¿No tienes cuenta?<a href="#register">Registrate</a></p>
 		</form>
 	</div>
@@ -20,3 +20,9 @@ export const login = () => {
 	  return sectionLogin;
   
 	  }
+
+	//   const buttongoogle  = document.getElementById("Google").value;
+	//   buttongoogle.addEventListener("click", e =>{ 
+    //      console.log("hola");
+
+	//   })
