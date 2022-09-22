@@ -15,9 +15,9 @@ export const register = () => {
       <figcaption>Leyenda de imágen del contenido de la pagina</figcaption>
       </figure> 
       <form action=""  id="registerForm">
-      <input type="text" name="" id="nameRegister" class="camapoTexto" placeholder="Nombre">
-        <input type="text" name="" id="emailRegister" class="camapoTexto" placeholder="Correo">
-        <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="camapoTexto" placeholder="Contraseña">
+      <input type="text" name="" id="nameRegister" class="camapoTexto" placeholder="Nombre" required>
+        <input type="text" name="" id="emailRegister" class="camapoTexto" placeholder="Correo" required>
+        <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="camapoTexto" placeholder="Contraseña" required>
 
         <button  class="button register__button-google"  "type="submit">Registrarse</button>
       </form>

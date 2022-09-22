@@ -11,8 +11,8 @@ export const login = () => {
 			<figcaption>Leyenda de imágen del contenido de la pagina</figcaption>
 		</figure>
 		<form class="formDatos">
-			<input type="text" name="" id="emailLogin" class="camapoTexto" placeholder="Correo">
-			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="camapoTexto" placeholder="Contraseña">
+			<input type="text" name="" id="emailLogin" class="camapoTexto" placeholder="Correo" required>
+			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="camapoTexto" placeholder="Contraseña" required>
 			<p id="passwordhidden">las credenciales no coinciden</p>
 			<button class="buttonIniciar" type="submit">Iniciar sesion</button>
 		</form>
@@ -29,27 +29,32 @@ export const login = () => {
 	const loginPassword = sectionLogin.querySelector('#passwordLogin');
 
 	loginForm.addEventListener('submit', (event) => {
-    
-    
+
+
 		loginUser(loginEmail.value, loginPassword.value)
-		.then((result) => {
-		  // console.log("token "+userCredential["user"]["accessToken"]) 
-		  console.log(result);   
-	
-	      loginForm.result
-		  window.location.hash ='#wall'; 
-		  loginForm.reset();
-		})
+			.then((result) => {
+				// console.log("token "+userCredential["user"]["accessToken"]) 
+				console.log(result);
 
-		.catch((error) => {
-			const errorCode = error.code;
-			 console.log(errorCode);
+				loginForm.result
+				window.location.hash = '#wall';
+				loginForm.reset();
+			})
 
-			
-		   
-		  });
-		});
-			
+			.catch((error) => {
+				const errorCode = error.code;
+				console.log(errorCode);
+				if (errorCode === "auth/user-not-found") {
+					console.log("corre no registrado")
+				} else if (errorCode === "auth/wrong-password") {
+					console.log("contraseña incorrecta")
+				}
+
+
+
+			});
+	});
+
 
 	const googleButt = sectionLogin.querySelector('.googleLogin');
 	googleButt.addEventListener('click', () => {
