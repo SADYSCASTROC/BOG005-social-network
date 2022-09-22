@@ -1,5 +1,5 @@
 
- import {  googleSignIn,saveUserInfo,loginUser } from '../lib/firebase/firebaseService.js';
+import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
 
 export const login = () => {
 	const sectionLogin = document.createElement('section');
@@ -12,7 +12,7 @@ export const login = () => {
 		</figure>
 		<form class="formDatos">
 			<input type="text" name="" id="emailLogin" class="camapoTexto" placeholder="Correo">
-			<input type="password" pattern=".{6,}" name="" id="paswordLogin" class="camapoTexto" placeholder="Contraseña">
+			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="camapoTexto" placeholder="Contraseña">
 			<p id="passwordhidden">las credenciales no coinciden</p>
 			<button class="buttonIniciar" type="submit">Iniciar sesion</button>
 		</form>
@@ -24,17 +24,45 @@ export const login = () => {
   
    </section>`;
 
-   const googleButt = sectionLogin.querySelector('.googleLogin');
-   googleButt.addEventListener('click', () => {
-	 googleSignIn()
-	   .then((result) => {
-		 const user = result.user;
-		  window.location.hash = '#wall';
-		  saveUserInfo(user.email, user.email, user.uid);
-	   });
-   });
-	  return sectionLogin;
-  
-	  }
+	const loginForm = sectionLogin.querySelector('.formDatos');
+	const loginEmail = sectionLogin.querySelector('#emailLogin');
+	const loginPassword = sectionLogin.querySelector('#passwordLogin');
+
+	loginForm.addEventListener('submit', (event) => {
+    
+    
+		loginUser(loginEmail.value, loginPassword.value)
+		.then((result) => {
+		  // console.log("token "+userCredential["user"]["accessToken"]) 
+		  console.log(result);   
+	
+	      loginForm.result
+		  window.location.hash ='#wall'; 
+		  loginForm.reset();
+		})
+
+		.catch((error) => {
+			const errorCode = error.code;
+			 console.log(errorCode);
+
+			
+		   
+		  });
+		});
+			
+
+	const googleButt = sectionLogin.querySelector('.googleLogin');
+	googleButt.addEventListener('click', () => {
+		googleSignIn()
+			.then((result) => {
+				const user = result.user;
+				window.location.hash = '#wall';
+				saveUserInfo(user.email, user.email, user.uid);
+			});
+	});
+
+	return sectionLogin;
+
+}
 
 
