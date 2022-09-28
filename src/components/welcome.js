@@ -1,5 +1,3 @@
-import { showSection } from '../main.js';
-
 export const welcome = () => {
   const sectionWelcome = document.createElement('section');
   sectionWelcome.className = 'sectionWelcome';
@@ -9,11 +7,10 @@ export const welcome = () => {
     </section>
     `;
 
-    const googleButton = sectionWelcome.querySelector('.buttonLogin');
-    googleButton.addEventListener('click', () => {
-      
+  const googleButton = sectionWelcome.querySelector('.buttonLogin');
+  googleButton.addEventListener('click', () => {
 
-    });
+  });
 
-    return sectionWelcome;
-    }
+  return sectionWelcome;
+};
