@@ -18,7 +18,7 @@ export const register = () => {
         <p class="youAreMember">
         Are you already a member?</p>
          <p class="startSession"> <a href="#login" class="a">
-         Log in</a> </p>
+         Login</a> </p>
       </form>
        
       </div> 
