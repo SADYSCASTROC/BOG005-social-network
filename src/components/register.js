@@ -17,13 +17,9 @@ export const register = () => {
         Sign up</button>
         <p class="youAreMember">
         Are you already a member?</p>
-         <p class="startSession"> <a href="#login" class="a">
-         Log in</a> </p>
-      <input type="text" name="" id="nameRegister" class="camapoTexto" placeholder="Nombre" required>
-        <input type="text" name="" id="emailRegister" class="camapoTexto" placeholder="Correo" required>
-        <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="camapoTexto" placeholder="Contraseña" required>
+         <p class="startSession"> <a href="#login" class="a"> Login</a> </p>
 
-        <button  class="button register__button-google"  "type="submit">Registrarse</button>
+
       </form>
        
       </div> 
