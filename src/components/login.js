@@ -11,11 +11,13 @@ export const login = () => {
 		</figure>
     
 		<form class="formDatos">
+
 			<input type="text" name="" id="emailLogin" class="texField" placeholder="Email">
 			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="texField" placeholder="Password">
 			
 			<button class="buttonStar" type="submit">
       Log in</button>
+
 		</form>
     <br>
     <p></p>
@@ -31,6 +33,7 @@ export const login = () => {
 	</div>;      
   
    </section>`;
+
 
   const loginForm = sectionLogin.querySelector('.formDatos');
   const loginEmail = sectionLogin.querySelector('#emailLogin');
@@ -56,6 +59,8 @@ export const login = () => {
        }
 		  });
   });
+
+
 
   const googleButt = sectionLogin.querySelector('.googleLogin');
   googleButt.addEventListener('click', () => {
