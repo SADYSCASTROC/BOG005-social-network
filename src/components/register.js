@@ -1,13 +1,9 @@
- import { createUser,saveUserInfo } from '../lib/firebase/firebaseService.js';
-
-
+import { createUser, saveUserInfo } from '../lib/firebase/firebaseService.js';
 
 export const register = () => {
-    const registrar = document.createElement("section");
-    registrar.className="login"
-    registrar.innerHTML =
-
-      `
+  const registrar = document.createElement('section');
+  registrar.className = 'login';
+  registrar.innerHTML = `
       <div class="container">
       <h1 class="titulo">Explorer</h1>
       <figure class="imagenDescripcion">
@@ -23,30 +19,27 @@ export const register = () => {
       </form>
        
       </div> 
-       `
+       `;
   const registerForm = registrar.querySelector('#registerForm');
   const registerUsername = registrar.querySelector('#nameRegister');
   const registerEmail = registrar.querySelector('#emailRegister');
   const registerPassword = registrar.querySelector('#passwordRegister');
 
   registerForm.addEventListener('submit', (event) => {
-    
-    
     createUser(registerEmail.value, registerPassword.value)
-    .then((userCredential) => {
-      // console.log("token "+userCredential["user"]["accessToken"])    
-      const user = userCredential.user;
+      .then((userCredential) => {
+      // console.log("token "+userCredential["user"]["accessToken"])
+        const user = userCredential.user;
 
-      saveUserInfo(registerUsername.value, user.email, user.uid);
-       alert("usuario registrado correctamente")
+        saveUserInfo(registerUsername.value, user.email, user.uid);
+        alert('usuario registrado correctamente');
 
-      window.location.hash ='#wall';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-       console.log(errorCode);
-     
-    });
+        window.location.hash = '#wall';
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+      });
   });
-          return registrar; 
-       };
+  return registrar;
+};

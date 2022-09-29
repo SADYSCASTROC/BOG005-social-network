@@ -1,10 +1,9 @@
-
 import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
 
 export const login = () => {
-	const sectionLogin = document.createElement('section');
-	sectionLogin.className = 'sectionLogin';
-	sectionLogin.innerHTML = `<section class="login">
+  const sectionLogin = document.createElement('section');
+  sectionLogin.className = 'sectionLogin';
+  sectionLogin.innerHTML = `<section class="login">
 	<div class="container">
 		<figure class="imagenDescripcion">
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
@@ -24,50 +23,41 @@ export const login = () => {
   
    </section>`;
 
-	const loginForm = sectionLogin.querySelector('.formDatos');
-	const loginEmail = sectionLogin.querySelector('#emailLogin');
-	const loginPassword = sectionLogin.querySelector('#passwordLogin');
+  const loginForm = sectionLogin.querySelector('.formDatos');
+  const loginEmail = sectionLogin.querySelector('#emailLogin');
+  const loginPassword = sectionLogin.querySelector('#passwordLogin');
 
-	loginForm.addEventListener('submit', (event) => {
+  loginForm.addEventListener('submit', (event) => {
+    loginUser(loginEmail.value, loginPassword.value)
+      .then((result) => {
+        // console.log("token "+userCredential["user"]["accessToken"])
+        console.log(result);
 
+        loginForm.result;
+        window.location.hash = '#wall';
+        loginForm.reset();
+      })
 
-		loginUser(loginEmail.value, loginPassword.value)
-			.then((result) => {
-				// console.log("token "+userCredential["user"]["accessToken"]) 
-				console.log(result);
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+        if (errorCode === 'auth/user-not-found') {
+          console.log('corre no registrado');
+        } else if (errorCode === 'auth/wrong-password') {
+          console.log('contraseña incorrecta');
+        }
+      });
+  });
 
-				loginForm.result
-				window.location.hash = '#wall';
-				loginForm.reset();
-			})
+  const googleButt = sectionLogin.querySelector('.googleLogin');
+  googleButt.addEventListener('click', () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        window.location.hash = '#wall';
+        saveUserInfo(user.email, user.email, user.uid);
+      });
+  });
 
-			.catch((error) => {
-				const errorCode = error.code;
-				console.log(errorCode);
-				if (errorCode === "auth/user-not-found") {
-					console.log("corre no registrado")
-				} else if (errorCode === "auth/wrong-password") {
-					console.log("contraseña incorrecta")
-				}
-
-
-
-			});
-	});
-
-
-	const googleButt = sectionLogin.querySelector('.googleLogin');
-	googleButt.addEventListener('click', () => {
-		googleSignIn()
-			.then((result) => {
-				const user = result.user;
-				window.location.hash = '#wall';
-				saveUserInfo(user.email, user.email, user.uid);
-			});
-	});
-
-	return sectionLogin;
-
-}
-
-
+  return sectionLogin;
+};

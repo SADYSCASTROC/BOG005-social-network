@@ -5,15 +5,14 @@ export const welcome = () => {
   sectionWelcome.className = 'sectionWelcome';
   sectionWelcome.innerHTML = `<section class="wlcm">
   <button class="buttonLogin"><a href="#login">Login</a></button>
-  <button><a href="#register">Registrarse</a></button>
+  <button  class= "buttonRegister"><a href="#register">Register</a></button>
     </section>
     `;
 
-    const googleButton = sectionWelcome.querySelector('.buttonLogin');
-    googleButton.addEventListener('click', () => {
-      
+  const googleButton = sectionWelcome.querySelector('.buttonLogin');
+  googleButton.addEventListener('click', () => {
 
-    });
+  });
 
-    return sectionWelcome;
-    }
+  return sectionWelcome;
+};
