@@ -4,6 +4,7 @@
 	box-sizing: 0;
 }
 :root {
+
 	--alto--campoTexto: 35px ;
 	--ancho-campos-texto: 60%;
 	--border-campos-texto-botones:15px;
@@ -14,26 +15,24 @@
 	--color-letra-boton: white;
 }
 
+
 body {
 	display: flex;
 	align-items: center;
 	padding: 10%;
 	justify-content: center;
-}
 
-section {
-	display: flex;
-	align-items: center;
+.register{
+	background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
+	height: 100vmax;
+	width: 100%;
+	opacity: 0.9;
 }
-
-figure {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin-top: 0%;
+h1{
+	margin-bottom: 10px;
+	color: white;
 }
-
-.imagenDescripcion {
+.imageDescription{
 	text-align: center;
 }
 .imgLogo{
@@ -49,13 +48,11 @@ figure {
 }
 .texField{
 	margin: 10px;
+
     height: var(--alto--campoTexto);
     width: var(--ancho-campos-texto);
-    border-radius: var(--border-campos-texto-botones);
-    text-align: center;
-	font-size: var(--tamaño-letra);
 
-}
+  }
 #mailInSuso{
 	font-size: 15px;
     background: aliceblue;
@@ -64,6 +61,7 @@ figure {
     text-align: center;
     margin-top: 0px;
 }
+
 .youAreMember{
     margin-top: 20px;
     font-size: 15px;
@@ -71,9 +69,10 @@ figure {
 	color: white;
 }
 .button{
+
 	height: var(--alto-botones);
-    width: var(--ancho-botones);
-    border-radius: var(--border-campos-texto-botones);
+   width: var(--ancho-botones);
+   border-radius: var(--border-campos-texto-botones);
 	font-size: var(--tamaño-letra);
 	background-color:var(--color-boton);
 	color: var(--color-letra-boton);
@@ -90,34 +89,33 @@ hr{
 	width: 30px;
 	background-color: black;
 	border-radius: 50%;
-
 }
 
-figcaption {
-	display: flex;
-	margin: 3%;
-}
+ 
+.a{
+	
+    font-size: 18px;
+	background-color: rgba(37, 37, 184, 0.45);
+	color: white;}
 
-.containerDatos {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	margin-bottom: 50px;
-	align-items: center;
+/*login*/
 
-}
-
-.camapoTexto {
-	height: 35px;
+.sectionLogin{
+	background-image: url(IMG//Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
+	height: 100vmax;
 	width: 100%;
-	border-radius: 15px;
-	margin: 3%;
+	opacity: 0.9;
+}
+.formDatos{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30p;
+    height: auto;
+	width: 100%;
 
 }
-
-.container {
-
-	background: url(https://w0.peakpx.com/wallpaper/800/474/HD-wallpaper-colorfull-colors-green-blue-blur-amoled-neon-cool-yellow-gradient.jpg);
+.containerButton{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -131,12 +129,14 @@ figcaption {
    
 }
 .buttonStar{
+
 	height: var(--alto-botones);
     width: var(--ancho-botones);
     border-radius: var(--border-campos-texto-botones);
 	font-size: var(--tamaño-letra);
 	background-color: var(--color-boton);
 	color: var(--color-letra-boton);
+
 
 }
 .startWithGoogle{
@@ -151,9 +151,10 @@ figcaption {
     justify-content: center; 
 	
 }
+
 .imgGoogle{
 	height: 30px;
-    width: 30px;
+   width: 30px;
 	
 }
 
@@ -226,16 +227,14 @@ figcaption {
 
 	height: auto;
 	text-align: center
+
 }
 
-a {
-	text-decoration: none;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
 
-	.container{
-		display: flex;
+@media only screen and (min-width:768px) and (max-width:900px){
+	body {overflow-y:hidden!important;
 	}
+
 	.imgLogo{
 		height: 235px;
 		width: 235px;
@@ -271,15 +270,32 @@ a {
 		font-size: var(--tamaño-letra);
 		background-color: var(--color-boton);
 		color: var(--color-letra-boton);
+
 	}
-	.buttonIniciar {
-		width: 35%;
-		height: 30px;
-		font-size: 12px;
+
+	.texField{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size:var(--tamaño-letra);
 	}
-    .inicioGogle{
-		font-size: 16px;
-	}
+    .button{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
+		}
+	.buttonStar{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
+	
+  }
 	.googleLogin{
 		height: var(--alto--campoTexto);
 		width: var(--ancho-campos-texto);
@@ -290,35 +306,45 @@ a {
 		font-size: 50px;
 		
 	}
-	.imginInisioSesion {
-		width: 700px;
-		height: 700px;
+	.texField{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size:var(--tamaño-letra);
+	}
+    .button{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
 		
 	}
-	.camapoTexto{
+	.youAreMember{
+		font-size: 20px;
+	}
+
+	.buttonStar{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
+	}
+	.startWithGoogle{
+		font-size: 16px;
+	}
+	.googleLogin{
+		height: var(--alto-campos-texto-botones);
+		width: var(--ancho-campos-texto-botones);
+		border-radius: var(--border-campos-texto-botones);
+		background-color: aliceblue;
+	
+	}
+	.imgGoogle{
 		height: 35px;
-		width: 70%;
-		
-        font-size: 15px;
-		border-radius: 20px
-
+		width: 35px;
 	}
-	.buttonIniciar {
-		width: 40%;
-		height: 30px;
-		font-size: 15px;
-		border-radius: 10px;
-	}
-    .inicioGogle{
-		font-size: 17px;
-		
-	}
-	.registrarse {
-		font-size: 18px;
-		
-	}
-
 }
-
-
-
