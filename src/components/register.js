@@ -6,6 +6,7 @@ export const register = () => {
   registrar.innerHTML = `
 
       <div class="container">
+<<<<<<< HEAD
                 <figure class="imageDescription">
                         <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
                         <h1 class="Title">Register</h1>
@@ -18,6 +19,7 @@ export const register = () => {
                           <button  class="button" type="submit">Register</button>
                           <p class="youAreMember">You are a member? <a href="#login" class="a">Login</a></p>
                  </form>
+
        `;
 
   const emailInUse = registrar.querySelector('#EmailInUse');
