@@ -1,5 +1,3 @@
-import { showSection } from '../main.js';
-
 export const welcome = () => {
   const sectionWelcome = document.createElement('section');
   sectionWelcome.className = 'sectionWelcome';

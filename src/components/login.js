@@ -3,21 +3,34 @@ import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseS
 export const login = () => {
   const sectionLogin = document.createElement('section');
   sectionLogin.className = 'sectionLogin';
-  sectionLogin.innerHTML = `<section class="login">
-	<div class="container">
-		<figure class="imagenDescripcion">
-			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
-			<figcaption>Leyenda de imágen del contenido de la pagina</figcaption>
-		</figure>
-		<form class="formDatos">
-			<input type="text" name="" id="emailLogin" class="camapoTexto" placeholder="Correo" required>
-			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="camapoTexto" placeholder="Contraseña" required>
-			<p id="passwordhidden">las credenciales no coinciden</p>
-			<button class="buttonIniciar" type="submit">Iniciar sesion</button>
-		</form>
-		<button class="button googleLogin" "type="submit">Google</button>
-		<p class="registrarse">¿No tienes cuenta?<a href="#register">Registrate</a></p>
 
+  sectionLogin.innerHTML = `
+>>>>>>> b19876a908ecbd2f1bf6453759f9c786c43938c4
+	<div class="container">
+		<figure class="imageDescription">
+			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
+      <h1>Lo gin </h1>
+		</figure>
+    
+		<form class="formDatos">
+
+			<input type="text" name="" id="emailLogin" class="texField" placeholder="Email">
+			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="texField" placeholder="Password">
+			
+			<button class="buttonStar" type="submit">
+      Log in</button>
+
+		</form>
+    <br>
+    <p></p>
+    <div class="containerButton">
+		<button class=" googleLogin" "type="submit">
+    <img class="imgGoogle" src="IMG/google.png">
+     <p class="startWithGoogle"> start with google</p>
+    </button>
+		<p class="registerText">You do not have an account?<a href="#register" class="a">
+    Sign up</a></p>
+    </div>
 
 	</div>;      
   
@@ -27,26 +40,25 @@ export const login = () => {
   const loginEmail = sectionLogin.querySelector('#emailLogin');
   const loginPassword = sectionLogin.querySelector('#passwordLogin');
 
-  loginForm.addEventListener('submit', (event) => {
+  loginForm.addEventListener('submit', () => {
     loginUser(loginEmail.value, loginPassword.value)
       .then((result) => {
-        // console.log("token "+userCredential["user"]["accessToken"])
-        console.log(result);
+		  // console.log("token "+userCredential["user"]["accessToken"])
+		  console.log(result);
 
-        loginForm.result;
-        window.location.hash = '#wall';
-        loginForm.reset();
+	      loginForm.result;
+		    window.location.hash = '#wall';
+		    loginForm.reset();
       })
-
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode);
-        if (errorCode === 'auth/user-not-found') {
+			 //console.log(errorCode);
+			 if (errorCode === 'auth/user-not-found') {
           console.log('corre no registrado');
-        } else if (errorCode === 'auth/wrong-password') {
-          console.log('contraseña incorrecta');
-        }
-      });
+			 }else if(errorCode === 'auth/wrong-password'){
+       // console.log("contraseña invalida")
+       }
+		  });
   });
 
   const googleButt = sectionLogin.querySelector('.googleLogin');

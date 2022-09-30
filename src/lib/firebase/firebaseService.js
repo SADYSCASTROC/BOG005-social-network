@@ -1,9 +1,14 @@
+
+/* eslint-disable import/no-unresolved */
+
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider,
   signInWithPopup,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import {
-  addDoc, collection, getFirestore, onSnapshot,
+
+  addDoc, collection, getFirestore,
+
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
 import { firebaseConfig } from './firebaseConfig.js';
@@ -16,6 +21,9 @@ const provider = new GoogleAuthProvider(app);
 const firestoreConnection = getFirestore(app);
 
 // Authentication
+
+
+// eslint-disable-next-line max-len
 
 export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 export const loginUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
