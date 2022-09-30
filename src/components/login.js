@@ -5,7 +5,7 @@ export const login = () => {
   sectionLogin.className = 'sectionLogin';
 
   sectionLogin.innerHTML = `
->>>>>>> b19876a908ecbd2f1bf6453759f9c786c43938c4
+
 	<div class="container">
 		<figure class="imageDescription">
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
@@ -15,49 +15,41 @@ export const login = () => {
 		<form class="formDatos">
 
 			<input type="text" name="" id="emailLogin" class="texField" placeholder="Email">
+			<p id="gmailNotFound">gmail not found</p>
 			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="texField" placeholder="Password">
-			
-			<button class="buttonStar" type="submit">
-      Log in</button>
-
+			<p  id="invalidPassword">Invalid password</p>
+			<button class="buttonStar" type="submit">Log in</button>
 		</form>
-    <br>
-    <p></p>
-    <div class="containerButton">
-		<button class=" googleLogin" "type="submit">
-    <img class="imgGoogle" src="IMG/google.png">
-     <p class="startWithGoogle"> start with google</p>
-    </button>
-		<p class="registerText">You do not have an account?<a href="#register" class="a">
-    Sign up</a></p>
-    </div>
+		<button class="button googleLogin" "type="submit">Google</button>
+		<p class="registrarse">¿No tienes cuenta?<a href="#register">Registrate</a></p>
 
-	</div>;      
-  
-   </section>`;
-
+  const invalidPasswor = sectionLogin.querySelector('#invalidPassword');
+  const gmailNotFoun = sectionLogin.querySelector('#gmailNotFound');
   const loginForm = sectionLogin.querySelector('.formDatos');
   const loginEmail = sectionLogin.querySelector('#emailLogin');
   const loginPassword = sectionLogin.querySelector('#passwordLogin');
-
+  
+  gmailNotFoun.style.display = 'none';
+  invalidPasswor.style.display = 'none';
   loginForm.addEventListener('submit', () => {
     loginUser(loginEmail.value, loginPassword.value)
-      .then((result) => {
+      .then(() => {
+		
 		  // console.log("token "+userCredential["user"]["accessToken"])
-		  console.log(result);
 
-	      loginForm.result;
 		    window.location.hash = '#wall';
 		    loginForm.reset();
       })
       .catch((error) => {
         const errorCode = error.code;
-			 //console.log(errorCode);
+
 			 if (errorCode === 'auth/user-not-found') {
-          console.log('corre no registrado');
-			 }else if(errorCode === 'auth/wrong-password'){
-       // console.log("contraseña invalida")
-       }
+				gmailNotFoun.style.display = 'block';
+
+			 } else if (errorCode === 'auth/wrong-password') {
+				invalidPasswor.style.display = 'block';
+        }
+
 		  });
   });
 
