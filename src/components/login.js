@@ -1,5 +1,4 @@
-
- import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
+import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
 
 export const login = () => {
   const sectionLogin = document.createElement('section');
@@ -7,7 +6,7 @@ export const login = () => {
 
   sectionLogin.innerHTML = `
 
-	<div class="container">
+	
 		<figure class="imageDescription">
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
       <h1 class="Title">Login</h1>
@@ -17,7 +16,7 @@ export const login = () => {
 			<p id="gmailNotFound">gmail not found</p>
 			<input type="password" pattern=".{6,}" name="" id="passwordLogin" class="texField" placeholder="Password">
 			<p  id="invalidPassword">Invalid password</p>
-			<button class="buttonStar button" type="submit">Login</button>
+			<button class=" button" type="submit">Login</button>
 		</form>
 		<button class="googleLogin" "type="submit">
     <img class="googleimg" src="IMG/google.png">
@@ -31,13 +30,12 @@ export const login = () => {
   const loginForm = sectionLogin.querySelector('.formDatos');
   const loginEmail = sectionLogin.querySelector('#emailLogin');
   const loginPassword = sectionLogin.querySelector('#passwordLogin');
-  
+
   gmailNotFoun.style.display = 'none';
   invalidPasswor.style.display = 'none';
   loginForm.addEventListener('submit', () => {
     loginUser(loginEmail.value, loginPassword.value)
       .then(() => {
-		
 		  // console.log("token "+userCredential["user"]["accessToken"])
 
 		    window.location.hash = '#wall';
@@ -47,12 +45,10 @@ export const login = () => {
         const errorCode = error.code;
 
 			 if (errorCode === 'auth/user-not-found') {
-				gmailNotFoun.style.display = 'block';
-
+          gmailNotFoun.style.display = 'block';
 			 } else if (errorCode === 'auth/wrong-password') {
-				invalidPasswor.style.display = 'block';
+          invalidPasswor.style.display = 'block';
         }
-
 		  });
   });
 

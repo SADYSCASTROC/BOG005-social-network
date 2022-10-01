@@ -1,4 +1,3 @@
-
 /* eslint-disable import/no-unresolved */
 
 import {
@@ -21,7 +20,6 @@ const provider = new GoogleAuthProvider(app);
 const firestoreConnection = getFirestore(app);
 
 // Authentication
-
 
 // eslint-disable-next-line max-len
 

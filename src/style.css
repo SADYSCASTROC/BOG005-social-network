@@ -13,7 +13,6 @@
   --border-radius-text-field-and-button:20px;
   --size-letters-text-field:15px;
   --size-letters-button:15px;
-
 }
 
 .register{
@@ -53,16 +52,7 @@
     text-align: center;
     font-size: var(--size-letters-text-field);
 }
-.button{
-    height: var(--button-height);
-    width: var(--button-width);
-    border-radius: var(--border-radius-text-field-and-button);
-    margin-top: 6px;
-    background-color:var(--color-button);
-    color: var(--color-letters);
-    font-size: var(--size-letters-button);
 
-}
 .starGoogle{
     font-size: 12px;
 }
@@ -79,15 +69,15 @@
 }
 .button{
 
-	height: var(--alto-botones);
-   width: var(--ancho-botones);
-   border-radius: var(--border-campos-texto-botones);
+	height: var(--button-height);
+    width: var(--button-width);
+    border-radius: var(--border-radius-text-field-and-button);
 	font-size: var(--tamaño-letra);
-	background-color:var(--color-boton);
-	color: var(--color-letra-boton);
+	background-color:var(--color-button);
+	font-size: var(--size-letters-button);
+    color: var( --color-letters);
 
 }
-
 .youAreMember{
     background-color: rgba(29, 29, 144, 0.611);
     color: aliceblue;
@@ -102,7 +92,7 @@
 /*login*/
 
 
-.login{
+.sectionLogin{
     background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
 	height: 100vmax;
 	width: 100%;
