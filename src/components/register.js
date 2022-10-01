@@ -2,6 +2,7 @@
 
 export const register = () => {
   const registrar = document.createElement('section');
+
   registrar.className = 'register';
   registrar.innerHTML = `
        
@@ -24,9 +25,26 @@ export const register = () => {
        
        `;
   const emailUSo = registrar.querySelector('#mailInSuso');
+
   const registerForm = registrar.querySelector('#registerForm');
   const registerEmail = registrar.querySelector('#emailRegister');
   const registerPassword = registrar.querySelector('#passwordRegister');
+
+
+  registerForm.addEventListener('submit', () => {
+
+    createUser(registerEmail.value, registerPassword.value)
+
+      saveUserInfo(registerUsername.value, user.email, user.uid);
+       alert("usuario registrado correctamente")
+
+      window.location.hash ='#wall';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+       console.log(errorCode);
+     
+    });
 
   emailUSo.style.display = 'none';
   registerForm.addEventListener('submit', () => {
@@ -47,6 +65,7 @@ export const register = () => {
         }
       });
 
+
   });
-          return registrar; 
- };
+  return registrar;
+};

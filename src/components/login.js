@@ -2,8 +2,12 @@
  import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
 
 export const login = () => {
-	const sectionLogin = document.createElement('section');
-	sectionLogin.innerHTML = `<section class="login">
+  const sectionLogin = document.createElement('section');
+  sectionLogin.className = 'sectionLogin';
+
+  sectionLogin.innerHTML = `
+
+	<div class="container">
 		<figure class="imageDescription">
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
       <h1 class="Title">Login</h1>
@@ -35,17 +39,20 @@ export const login = () => {
       .then(() => {
 		
 		  // console.log("token "+userCredential["user"]["accessToken"])
+
 		    window.location.hash = '#wall';
 		    loginForm.reset();
       })
       .catch((error) => {
         const errorCode = error.code;
+
 			 if (errorCode === 'auth/user-not-found') {
 				gmailNotFoun.style.display = 'block';
 
 			 } else if (errorCode === 'auth/wrong-password') {
 				invalidPasswor.style.display = 'block';
         }
+
 		  });
   });
 

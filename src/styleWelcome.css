@@ -1,0 +1,27 @@
+.sectionWelcome {
+    /*background-image: url(https://w0.peakpx.com/wallpaper/800/474/HD-wallpaper-colorfull-colors-green-blue-blur-amoled-neon-cool-yellow-gradient.jpg);*/
+    background-color: blue;  
+    width: 600% ;
+    height: 600% ;
+
+}
+
+#root {
+    
+}
+
+ .buttonLogin {
+    background-color: rgb(212, 22, 22);
+    font-size: 18px;
+    
+}
+
+@media (min-width: 760px) {
+
+}
+
+@media (min-width: 1020px){
+
+
+}
+
