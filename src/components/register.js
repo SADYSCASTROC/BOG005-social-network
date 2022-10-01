@@ -1,21 +1,21 @@
-import { createUser, saveUserInfo } from '../lib/firebase/firebaseService.js';
+ import { createUser,saveUserInfo } from '../lib/firebase/firebaseService.js';
 
 export const register = () => {
   const registrar = document.createElement('section');
 
   registrar.className = 'register';
   registrar.innerHTML = `
-        <div class="container">
+       
         <figure class="imageDescription">
         <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
-        <h1>Create Account </h1>
+        <h1 class="Title">Create Account </h1>
         </figure> 
-        <form action=""  id="registerForm">
+        <form action=""  id="registerForm" class="Form">
         <input type="text" name="" id="nameRegister" class="texField" placeholder="Name">
           <input type="text" name="" id="emailRegister" class="texField" placeholder="Email">
           <p id="mailInSuso">Gmail in use</p>
           <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="texField" placeholder="Password">
-          <button  class="button register__button-google"  "type="submit">
+          <button  class="button "  "type="submit">
           Sign up</button>
           <p class="youAreMember">
           Are you already a member?</p>
@@ -23,7 +23,6 @@ export const register = () => {
           Login</a> </p>
         </form>
        
-      </div> 
        `;
   const emailUSo = registrar.querySelector('#mailInSuso');
 
@@ -35,6 +34,17 @@ export const register = () => {
   registerForm.addEventListener('submit', () => {
 
     createUser(registerEmail.value, registerPassword.value)
+
+      saveUserInfo(registerUsername.value, user.email, user.uid);
+       alert("usuario registrado correctamente")
+
+      window.location.hash ='#wall';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+       console.log(errorCode);
+     
+    });
 
   emailUSo.style.display = 'none';
   registerForm.addEventListener('submit', () => {
@@ -52,7 +62,6 @@ export const register = () => {
         if(errorCode === "auth/email-already-in-use"){
 
           emailUSo.style.display = 'block';
-          
         }
       });
 
