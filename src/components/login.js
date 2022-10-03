@@ -5,8 +5,6 @@ export const login = () => {
   sectionLogin.className = 'sectionLogin';
 
   sectionLogin.innerHTML = `
-
-	
 		<figure class="imageDescription">
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
       <h1 class="Title">Login</h1>
