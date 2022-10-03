@@ -31,12 +31,7 @@ export const register = () => {
   const registerEmail = registrar.querySelector('#emailRegister');
   const registerPassword = registrar.querySelector('#passwordRegister');
 
-
-  registerForm.addEventListener('submit', () => {
-
-    createUser(registerEmail.value, registerPassword.value)
-
-  emailUSo.style.display = 'none';
+ emailUSo.style.display = 'none';
   registerForm.addEventListener('submit', () => {
     createUser(registerEmail.value, registerPassword.value)
       .then((userCredential) => {
@@ -59,4 +54,4 @@ export const register = () => {
 
   });
   return registrar;
-};
+  };
