@@ -2,9 +2,9 @@ import { createUser, saveUserInfo } from '../lib/firebase/firebaseService.js';
 
 export const register = () => {
   const registrar = document.createElement('section');
-
   registrar.className = 'register';
   registrar.innerHTML = `
+
        
         <figure class="imageDescription">
         <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
@@ -22,31 +22,36 @@ export const register = () => {
           <p class="startSession"> <a href="#login" class="a">
           Login</a> </p>
         </form>
+
        
 
        `;
-  const emailUSo = registrar.querySelector('#mailInSuso');
-
   const registerForm = registrar.querySelector('#registerForm');
+  const registerUsername = registrar.querySelector('#nameRegister');
   const registerEmail = registrar.querySelector('#emailRegister');
   const registerPassword = registrar.querySelector('#passwordRegister');
 
+
   emailUSo.style.display = 'none';
+
   registerForm.addEventListener('submit', () => {
     createUser(registerEmail.value, registerPassword.value)
       .then((userCredential) => {
       // console.log("token "+userCredential["user"]["accessToken"])
         const user = userCredential.user;
-        saveUserInfo(user.email, user.email, user.uid);
-        // alert('usuario registrado correctamente');
+
+        saveUserInfo(registerUsername.value, user.email, user.uid);
+        alert('usuario registrado correctamente');
 
         window.location.hash = '#wall';
       })
       .catch((error) => {
         const errorCode = error.code;
+
         if (errorCode === 'auth/email-already-in-use') {
           emailUSo.style.display = 'block';
         }
+
       });
   });
   return registrar;
