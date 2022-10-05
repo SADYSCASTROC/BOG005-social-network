@@ -32,9 +32,10 @@ export const login = () => {
   loginForm.addEventListener('submit', () => {
     loginUser(loginEmail.value, loginPassword.value)
       .then(() => {
-        // console.log("token "+userCredential["user"]["accessToken"])
-        window.location.hash = '#wall';
-        loginForm.reset();
+
+		  // console.log("token "+userCredential["user"]["accessToken"])
+      loginForm.reset();
+		    window.location.hash = '#wall';
       })
       .catch((error) => {
         const errorCode = error.code;
