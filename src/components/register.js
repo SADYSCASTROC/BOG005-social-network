@@ -18,11 +18,13 @@ export const register = () => {
         <p class="youAreMember">You are a member? <a href="#login" class="a">Login</a></p>
       </form>
        `;
+
   const emailInUse = registrar.querySelector('#EmailInUse');
   const registerForm = registrar.querySelector('#registerForm');
   const registerUsername = registrar.querySelector('#nameRegister');
   const registerEmail = registrar.querySelector('#emailRegister');
   const registerPassword = registrar.querySelector('#passwordRegister');
+
   emailInUse.style.display = 'none';
   registerForm.addEventListener('submit', () => {
     createUser(registerEmail.value, registerPassword.value)

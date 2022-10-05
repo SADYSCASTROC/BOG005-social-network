@@ -1,5 +1,5 @@
 
-import { savePost, getPost, onGetPost, deletePost,} from "../lib/firebase/firebaseService.js";
+import { savePost, getPost, onGetPost, deletePost, getPostOne, updatePost,} from "../lib/firebase/firebaseService.js";
 export const wall = () => {
   const sectionWall = document.createElement('section');
   sectionWall.className = 'sectionWall';
@@ -7,7 +7,7 @@ export const wall = () => {
    sectionWall.innerHTML =`<h1 class="tituloo">este es mi muro</h1>
   <form class="formWall">   
     <input type="text" placeholder="Description" id="post">
-    <button type="submit">Post</button>
+    <button type="submit" id="btnPost">Post</button>
   </form>
   <div id="createPost"></div>
   `
@@ -16,10 +16,20 @@ export const wall = () => {
   const formPost = sectionWall.querySelector('.formWall');
   const descriptionPost = sectionWall.querySelector('#post');
   const postContainer = sectionWall.querySelector('#createPost');
+  let editStatus = false;
+  let id = '';
 
   formPost.addEventListener('submit', (e) => {
     e.preventDefault();
-    savePost(descriptionPost.value);
+
+    if(!editStatus){
+      savePost(descriptionPost.value);
+    }else{
+      updatePost(id,{
+        description: descriptionPost.value,
+      });
+      editStatus=false;
+    }
     formPost.reset();
 
   });
@@ -35,6 +45,7 @@ export const wall = () => {
         <p> ${post.description}</p>
        </div>
        <button class="deleteButton"  data-id="${doc.id}">Delete</button>
+       <button class="editButton"  data-id="${doc.id}">Edit</button>
       `;
     });
     postContainer.innerHTML = html;
@@ -43,6 +54,19 @@ export const wall = () => {
     buttonDelete.forEach(btn => {
       btn.addEventListener('click', ({target: {dataset}}) => {
         deletePost(dataset.id);
+      });
+    });
+
+    const buttonEdit = postContainer.querySelectorAll('.editButton');
+
+    buttonEdit.forEach(btn => {
+      btn.addEventListener('click',async (e) => {
+       const doc= await getPostOne(e.target.dataset.id);
+       const postOne = doc.data();
+       formPost ['post'].value= postOne.description;
+       editStatus = true;
+       id = e.target.dataset.id;
+       formPost['btnPost'].innerText= 'Update'
       })
     })
 
