@@ -1,20 +1,51 @@
-.sectionWelcome {
-    /*background-image: url(https://w0.peakpx.com/wallpaper/800/474/HD-wallpaper-colorfull-colors-green-blue-blur-amoled-neon-cool-yellow-gradient.jpg);*/
-    background-color: blue;  
-    width: 600% ;
-    height: 600% ;
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
 }
 
-#root {
-    
-}
+:root{
+    --button-height:35px;
+    --button-width:35%;
+    --text-field-height:35px;
+    --text-field-width:60%;
+    --color-button:blue;
+    --color-letters:white;
+    --border-radius-text-field-and-button:20px;
+    --size-letters-text-field:15px;
+    --size-letters-button:15px;
+  }
+
+/*section.wlcm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30%;
+   
+}*/
 
  .buttonLogin {
-    background-color: rgb(212, 22, 22);
+    background: beige;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonRegister {
+    background-color: rgb(243, 239, 239);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.a {
+    background-color: rgb(243, 239, 239);
     font-size: 18px;
     
 }
+
 
 @media (min-width: 760px) {
 
