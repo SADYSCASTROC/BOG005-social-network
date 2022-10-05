@@ -6,7 +6,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import {
 
-  addDoc, collection, getFirestore,
+  addDoc, collection, getFirestore, getDocs, onSnapshot, deleteDoc, doc,
 
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
@@ -33,3 +33,15 @@ export const googleSignIn = () => signInWithPopup(auth, provider);
 export const saveUserInfo = (userName, userEmail, userID) => {
   addDoc(collection(firestoreConnection, 'Users'), { userName, userEmail, userID });
 };
+
+const db = getFirestore();
+
+export const savePost = (description) => {
+  addDoc(collection(db, 'post'), { description });
+};
+
+export const getPost = () => getDocs(collection (db, 'post'))
+
+export const onGetPost = (callback) => onSnapshot(collection(db, 'post'), callback);
+
+export const deletePost = (id) => deleteDoc(doc(db, 'post', id));

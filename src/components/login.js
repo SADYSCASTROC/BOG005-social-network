@@ -35,9 +35,8 @@ export const login = () => {
     loginUser(loginEmail.value, loginPassword.value)
       .then(() => {
 		  // console.log("token "+userCredential["user"]["accessToken"])
-
+      loginForm.reset();
 		    window.location.hash = '#wall';
-		    loginForm.reset();
       })
       .catch((error) => {
         const errorCode = error.code;
