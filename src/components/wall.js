@@ -2,7 +2,7 @@ import {
   savePost, onGetPost, deletePost, getPostOne, updatePost, logOut, currentUser, auth, likePost, DeletelikePost,
 } from '../lib/firebase/firebaseService.js';
 
-<<<<<<< HEAD
+ HEAD
 import { savePost, getPost, onGetPost, deletePost, getPostOne, updatePost, } from "../lib/firebase/firebaseService.js";
 export const wall = () => {
 	const sectionWall = document.createElement('section');
@@ -25,8 +25,8 @@ export const wall = () => {
 	const postContainer = sectionWall.querySelector('#createPost');
 	let editStatus = false;
 	let id = '';
-=======
-export const wall = () => {
+
+ const wall = () => {
   const sectionWall = document.createElement('section');
   sectionWall.className = 'sectionWall';
   sectionWall.innerHTML = `<h1 class="tituloo">este es mi muro</h1>
@@ -47,12 +47,12 @@ export const wall = () => {
   let editStatus = false;
   let id = '';
   const like = [];
->>>>>>> 8b879b81f97c65e321b783f1b68601ec4bf89acb
+
 
 	formPost.addEventListener('submit', (e) => {
 		e.preventDefault();
 
-<<<<<<< HEAD
+
 		if (!editStatus) {
 			savePost(descriptionPost.value);
 		} else {
@@ -105,7 +105,7 @@ export const wall = () => {
 
 		});
 	});
-=======
+
     if (!editStatus) {
       savePost(descriptionPost.value, like);
     } else {
@@ -115,7 +115,7 @@ export const wall = () => {
       editStatus = false;
     }
     formPost.reset();
-  });
+  };
 
   window.addEventListener('DOMContentLoaded', async () => {
     onGetPost((querySnapshot) => {
@@ -168,11 +168,11 @@ export const wall = () => {
       });
     });
   });
->>>>>>> 8b879b81f97c65e321b783f1b68601ec4bf89acb
 
-<<<<<<< HEAD
+
+
 	return sectionWall;
-=======
+
   logOutButton.addEventListener('click', () => {
     logOut();
     window.location.hash = '';
@@ -180,5 +180,4 @@ export const wall = () => {
   });
 
   return sectionWall;
->>>>>>> 9cbcc22db53fa01361b6ed33652aeb95b1cc186f
 };
