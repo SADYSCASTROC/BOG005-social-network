@@ -1,4 +1,61 @@
-.tituloo{
-    color: rgb(52, 165, 42);
-    
+header.headerWall{
+	display: flex;
+	min-height: 30px;
+
+
 }
+img.imgLogoWall{
+	height: 130px;
+	width: 130px;
+	align-self: center;
+	margin: auto;	
+}
+
+#post{
+	margin: 5%;
+	height: 130px;
+	text-align: center;
+	border-radius: 20px;
+}
+
+form{
+	display: grid;
+}
+
+button#btnPost{
+	margin: auto;
+	width: 130px;
+	border-radius: 15px;
+
+}
+
+html{
+	background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
+	height: 100vmax;
+	width: 100%;
+	opacity: 0.9;
+}
+
+p{
+	background: grey;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+	border-radius: 20px;
+	text-align: center;
+	padding: 3%;
+}
+
+.deleteButton{
+	background: blueviolet;
+	display: inline-block;
+	padding: 5px;
+	font-size: 15px;
+	border-radius: 15px;
+	width: 70px;
+	text-align: center;
+	margin-left: 5%;
+	text-decoration: none;
+	color:black ;
+}
+
