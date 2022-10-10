@@ -1,12 +1,12 @@
 import {
-  savePost, getPost, onGetPost, deletePost, getPostOne, updatePost,
+  savePost, onGetPost, deletePost, getPostOne, updatePost, logOut, currentUser, auth, likePost, DeletelikePost,
 } from '../lib/firebase/firebaseService.js';
 
 export const wall = () => {
   const sectionWall = document.createElement('section');
   sectionWall.className = 'sectionWall';
-
   sectionWall.innerHTML = `<h1 class="tituloo">este es mi muro</h1>
+  <button class="wallLogout">salir</button>
   <form class="formWall">   
     <input type="text" placeholder="Description" id="post">
 
@@ -18,6 +18,8 @@ export const wall = () => {
   const formPost = sectionWall.querySelector('.formWall');
   const descriptionPost = sectionWall.querySelector('#post');
   const postContainer = sectionWall.querySelector('#createPost');
+  const logOutButton = sectionWall.querySelector('.wallLogout');
+
   let editStatus = false;
   let id = '';
   const like = [];
@@ -26,7 +28,6 @@ export const wall = () => {
     e.preventDefault();
 
     if (!editStatus) {
-      console.log(like);
       savePost(descriptionPost.value, like);
     } else {
       updatePost(id, {
@@ -37,7 +38,6 @@ export const wall = () => {
     formPost.reset();
   });
 
-
   window.addEventListener('DOMContentLoaded', async () => {
     onGetPost((querySnapshot) => {
       let html = '';
@@ -45,6 +45,8 @@ export const wall = () => {
         const post = doc.data();
         html += `
        <div>
+       <p> ${post.email}</p>
+
         <p> ${post.description}</p>
        </div>
        <button class="likeButton"  data-id="${doc.id}">like</button>
@@ -60,12 +62,16 @@ export const wall = () => {
           deletePost(dataset.id);
         });
       });
-     /*aqui */
+      /* likes */
       const buttonLike = postContainer.querySelectorAll('.likeButton');
       buttonLike.forEach((btn) => {
         btn.addEventListener('click', (event) => {
-          const likeId = event.target.dataset.id;
-           
+          const currentUserLike = auth.currentUser.uid;
+          console.log(currentUserLike);
+          const idLikeButton = event.target.dataset.id;
+          console.log(idLikeButton);
+            likePost(currentUserLike, idLikeButton);
+          //  deletePost(currentUserLike, idLikeButton);
         });
       });
 
@@ -82,6 +88,12 @@ export const wall = () => {
         });
       });
     });
+  });
+
+  logOutButton.addEventListener('click', () => {
+    logOut();
+    window.location.hash = '';
+    location.reload();
   });
 
   return sectionWall;
