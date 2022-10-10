@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/no-unresolved */
 
 import {
@@ -36,11 +37,11 @@ export const saveUserInfo = (userName, userEmail, userID) => {
 
 const db = getFirestore();
 
-export const savePost = (description) => {
-  addDoc(collection(db, 'post'), { description });
+export const savePost = (description, like) => {
+  addDoc(collection(db, 'post'), { description, like });
 };
 
-export const getPost = () => getDocs(collection (db, 'post'))
+export const getPost = () => getDocs(collection(db, 'post'));
 
 export const onGetPost = (callback) => onSnapshot(collection(db, 'post'), callback);
 
