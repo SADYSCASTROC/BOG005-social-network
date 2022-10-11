@@ -8,7 +8,7 @@ export const login = () => {
 	<figure class="imageDescription">
 	   <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
 	   <h1 class="Title">Login</h1>
-          </figure>
+    </figure>
           <form class="formDatos Form">
 	   <input type="text" name="" id="emailLogin" class="texField" placeholder="Email">
 	   <p id="gmailNotFound">gmail not found</p>
