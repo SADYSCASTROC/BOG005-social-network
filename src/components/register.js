@@ -5,20 +5,26 @@ export const register = () => {
 	registrar.className = 'register';
 	registrar.innerHTML = `
       <div class="container">
-<<<<<<< HEAD
-                <figure class="imageDescription">
-                        <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
-                        <h1 class="Title">Register</h1>
-                </figure>
-                <form action=""  id="registerForm" class="Form">
-                          <input type="text" name="" id="nameRegister" class="texField" placeholder="Name">
-                          <input type="text" name="" id="emailRegister" class="texField" placeholder="Gmail">
-                           <p id="EmailInUse">Email in use</p>
-                          <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="texField" placeholder="Password">
-                          <button  class="button" type="submit">Registrarse</button>
-                          <p class="youAreMember">You are a member? <a href="#login" class="a">Login</a></p>
-                 </form>
 
+   
+      <figure class="imageDescription">
+			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
+      <h1>Create Account </h1>
+      </figure> 
+      <form action=""  id="registerForm"
+      <input type="text" name="" id="nameRegister" class="texField" placeholder="Name">
+        <input type="text" name="" id="emailRegister" class="texField" placeholder="Email">
+        <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="texField" placeholder="Password">
+        <button  class="button register__button-google"  "type="submit">
+        Sign up</button>
+        <p class="youAreMember">
+        Are you already a member?</p>
+         <p class="startSession"> <a href="#login" class="a">
+         Log in</a> </p>
+      </form>
+       
+      </div> 
+>>>>>>> aba1dc6aa9e23c8edbc29e9a3001f0c042d7a4a6
        `;
 
 	const emailInUse = registrar.querySelector('#EmailInUse');
