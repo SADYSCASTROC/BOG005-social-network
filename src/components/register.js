@@ -9,7 +9,7 @@ export const register = () => {
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
       <h1>Create Account </h1>
       </figure> 
-      <form action=""  id="registerForm">
+      <form action=""  id="registerForm"
       <input type="text" name="" id="nameRegister" class="texField" placeholder="Name">
         <input type="text" name="" id="emailRegister" class="texField" placeholder="Email">
         <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="texField" placeholder="Password">
@@ -18,7 +18,7 @@ export const register = () => {
         <p class="youAreMember">
         Are you already a member?</p>
          <p class="startSession"> <a href="#login" class="a">
-         Login</a> </p>
+         Log in</a> </p>
       </form>
        
       </div> 
