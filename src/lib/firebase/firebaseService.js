@@ -10,6 +10,7 @@ import {
   addDoc, collection, getFirestore, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc, arrayUnion, arrayRemove,
 
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
 import { firebaseConfig } from './firebaseConfig.js';
 

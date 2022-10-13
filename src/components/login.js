@@ -1,5 +1,6 @@
 import { googleSignIn, saveUserInfo, loginUser } from '../lib/firebase/firebaseService.js';
 
+
 export const login = () => {
 	const sectionLogin = document.createElement('section');
 	sectionLogin.className = 'sectionLogin';
