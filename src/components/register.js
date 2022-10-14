@@ -1,10 +1,11 @@
 import { createUser, saveUserInfo } from '../lib/firebase/firebaseService.js';
 
 export const register = () => {
-	const registrar = document.createElement('section');
-	registrar.className = 'register';
-	registrar.innerHTML = `
+  const registrar = document.createElement('section');
+  registrar.className = 'register';
+  registrar.innerHTML = `
       <div class="container">
+<<<<<<< HEAD
                 <figure class="imageDescription">
                         <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
                         <h1 class="Title">Register</h1>
@@ -19,29 +20,29 @@ export const register = () => {
                  </form>
        `;
 
-	const emailInUse = registrar.querySelector('#EmailInUse');
-	const registerForm = registrar.querySelector('#registerForm');
-	const registerUsername = registrar.querySelector('#nameRegister');
-	const registerEmail = registrar.querySelector('#emailRegister');
-	const registerPassword = registrar.querySelector('#passwordRegister');
+  const emailInUse = registrar.querySelector('#EmailInUse');
+  const registerForm = registrar.querySelector('#registerForm');
+  const registerUsername = registrar.querySelector('#nameRegister');
+  const registerEmail = registrar.querySelector('#emailRegister');
+  const registerPassword = registrar.querySelector('#passwordRegister');
 
-	emailInUse.style.display = 'none';
-	registerForm.addEventListener('submit', () => {
-		createUser(registerEmail.value, registerPassword.value)
-			.then((userCredential) => {
-				// console.log("token "+userCredential["user"]["accessToken"])
-				const user = userCredential.user;
-				saveUserInfo(registerUsername.value, user.email, user.uid);
-				alert('usuario registrado correctamente');
-				window.location.hash = '#wall';
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				console.log(errorCode);
-				if (errorCode == 'auth/email-already-in-use') {
-					emailInUse.style.display = 'block';
-				}
-			});
-	});
-	return registrar;
+  emailInUse.style.display = 'none';
+  registerForm.addEventListener('submit', () => {
+    createUser(registerEmail.value, registerPassword.value)
+      .then((userCredential) => {
+        // console.log("token "+userCredential["user"]["accessToken"])
+        const user = userCredential.user;
+        saveUserInfo(registerUsername.value, user.email, user.uid);
+        alert('usuario registrado correctamente');
+        window.location.hash = '#wall';
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+        if (errorCode == 'auth/email-already-in-use') {
+          emailInUse.style.display = 'block';
+        }
+      });
+  });
+  return registrar;
 };
