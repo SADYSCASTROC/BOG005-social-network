@@ -14,7 +14,7 @@ export const register = () => {
                           <input type="text" name="" id="emailRegister" class="texField" placeholder="Gmail">
                            <p id="EmailInUse">Email in use</p>
                           <input type="password" pattern=".{6,}" name="" id="passwordRegister" class="texField" placeholder="Password">
-                          <button  class="button" type="submit">Registrarse</button>
+                          <button  class="button" type="submit">Register</button>
                           <p class="youAreMember">You are a member? <a href="#login" class="a">Login</a></p>
                  </form>
        `;

@@ -4,18 +4,16 @@ jest.mock('../src/lib/firebase/firebaseService.js');
 
 describe('showSection', () => {
   it('comprobando login', () => {
-      document.body.innerHTML = `<main id="root"></main>`;
-      window.location.hash = '#login';
-      showSection();
-      expect(document.querySelector('h1.Title').textContent).toBe('Login');
+    document.body.innerHTML = '<main id="root"></main>';
+    window.location.hash = '#login';
+    showSection();
+    expect(document.querySelector('h1.Title').textContent).toBe('Login');
   });
-});
 
-it('showSection', () => {
-  // eslint-disable-next-line quotes
-  document.body.innerHTML = `<div id="root"></div>`;
-  window.location.hash = '#register';
-  showSection();
-  expect(document.querySelector('h2.register__title').textContent).toBe('Create account');
-});
+  it('probando registro', () => {
+    document.body.innerHTML = '<main id="root"></main>';
+    window.location.hash = '#register';
+    showSection();
+    expect(document.querySelector('h1.Title').textContent).toBe('Register');
+  });
 });
