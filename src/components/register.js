@@ -19,6 +19,7 @@ export const register = () => {
          <p class="startSession"> <a href="#login" class="a">
          Login</a> </p>
       </form>
+
        `;
 
   const emailInUse = registrar.querySelector('#EmailInUse');
