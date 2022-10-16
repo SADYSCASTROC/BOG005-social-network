@@ -1,60 +1,157 @@
-header.headerWall{
-	display: flex;
-	min-height: 30px;
-
+body{
+ height: 100vh;
+ overflow-y:hidden!important;
 
 }
-img.imgLogoWall{
-	height: 130px;
-	width: 130px;
-	align-self: center;
-	margin: auto;	
+#root{
+ width: 100%;
+ height: 100vh;
+}
+
+.sectionWall{
+	height: 100vh;
+	background-color: rgba(185, 186, 186, 0.905);
+
+}
+.headerWall{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	height: 75px;
+	background-color:#4ecad7bf;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.imgLogoWall{
+	height: 74px;
+    width: 195px
+}
+ul{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+	list-style: none;
+}
+.formWall{
+	display: flex;
+	flex-direction: column;
+	flex-direction: column;
+    align-items: center;
+}
+#modalPost{
+	border: none;
+	background-color: #4ecad7bf;
 }
 
 #post{
-	margin: 5%;
-	height: 130px;
+	height: 142px;
+    width: 80%;
+    border: 1px solid #e1dada;
+    margin-top: 40px;
+    border-radius: 20px;
 	text-align: center;
-	border-radius: 20px;
 }
-
-form{
-	display: grid;
+#btnPost{
+ margin-top: 10px;
 }
-
-button#btnPost{
-	margin: auto;
-	width: 130px;
+.wallLogout{
+	border: none;
+	background-color:#4ecad7bf ;
+}
+.modal{
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0px;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divModal{
+	width: 60%;
+	height: 40%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: relative;
+	transition: transform 5S;
+	transform: translateY(0%);
 	border-radius: 15px;
 }
-
-html{
-	background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp);
-	height: 100vmax;
-	width: 100%;
-	opacity: 0.9;
-}
-
-p{
-	background: grey;
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-top: 5%;
-	border-radius: 20px;
-	text-align: center;
-	padding: 3%;
-}
-
-.deleteButton{
-	background: blueviolet;
+.close{
+	position: absolute;
+	top: 15px;
+	right: 15px;
 	display: inline-block;
-	padding: 5px;
-	font-size: 15px;
-	border-radius: 15px;
-	width: 70px;
+	width: 25px;
+	height: 25px;
+	background-color: #4ecad7bf;
+	color: white;
+	line-height: 25px;
+	cursor: pointer;
 	text-align: center;
-	margin-left: 5%;
-	text-decoration: none;
-	color:black ;
+	border-radius: 50%;
 }
+.walltitle{
+	margin-top: 15px;
+    text-align: center;
+}
+#createPost{
+	height: 73vh;
+    overflow-y: scroll;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post{
+	height: auto;
+    border-radius: 20%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.wallButtons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    border-top: 1px solid #c0c5c0;
+}
+.card{
+	background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    border: 5px solid rgba(185, 186, 186, 0.905);
+    border-radius: 20px;
+    box-shadow: rgb(192 191 191 / 20%) 0px 2px 8px 0px;
+}
+.likeButton{
+	margin-left: -37px;
+	border: none;
+	background-color:white ;
+}
+.RemovelikeButton{
+	border: none;
+	margin-left: -37px;
+	background-color:white ;
 
+
+}
+.description{
+	margin-top: -20px;
+    margin-left: 15px;}
+.email{
+	text-align: center;
+    margin-top: -19px;
+
+}
+.buttonsCard{
+	margin-top: 10px;
+}

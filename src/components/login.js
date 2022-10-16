@@ -7,7 +7,7 @@ export const login = () => {
 	sectionLogin.innerHTML = `
 
 	<figure class="imageDescription">
-	   <img class="imgLogo" src="IMG/Explore-removebg-preview.png">
+	   <img class="imgLogo" src="IMG/Explore.PNG">
 	   <h1 class="Title">Login</h1>
     </figure>
           <form class="formDatos Form">

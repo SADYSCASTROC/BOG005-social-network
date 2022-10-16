@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 /* eslint-disable no-tabs */
 import {
   savePost, onGetPost, deletePost, getPostOne, updatePost, logOut, auth, likePost, DeletelikePost,
@@ -8,19 +7,32 @@ export const wall = () => {
   const sectionWall = document.createElement('section');
   sectionWall.className = 'sectionWall';
   sectionWall.innerHTML = `
-	<header class=headerWall>
-	   <img class="imgLogoWall" src="IMG/Explore-removebg-preview.png">
+         
+	<header class="headerWall">
+	   <img class="imgLogoWall" src="IMG/explore.PNG">
+     <ul>
+     <li><button id="modalPost">new post</button></li>
+     <li><button class="wallLogout">Sign off</button></li>
+     </ul>
   </header>
-  <button class="wallLogout">salir</button>
+  <h1 class="walltitle">Tell your experience</h1> 
+
 	<section>
-		<form class="formWall">
-			<input type="text" placeholder="Description" id="post">
+  <div class="modal">
+    <div class="divModal">
+    <p class="close">X</p>
+		<form class="formWall" >
+			<textarea type="text" id="post"></textarea>
 			<button type="submit" id="btnPost">Post</button>
 		</form>
-		<texarea id="createPost"></texarea>
+    </div>
+  </div>
+  <div id="createPost"></div>
 	</section>
+   
   `;
-
+  const createPost = sectionWall.querySelector('#btnPost');
+  const divModal = sectionWall.querySelector('.modal');
   const formPost = sectionWall.querySelector('.formWall');
   const descriptionPost = sectionWall.querySelector('#post');
   const postContainer = sectionWall.querySelector('#createPost');
@@ -28,6 +40,7 @@ export const wall = () => {
   let editStatus = false;
   let id = '';
 
+  // eslint-disable-next-line no-unused-expressions
   formPost.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -54,35 +67,50 @@ export const wall = () => {
 
         let aux = 0;
         p1 = '';
-      
+
+        // eslint-disable-next-line array-callback-return
         post.like.map((index) => {
           if (index === auth.currentUser.uid) {
             aux = 1;
-            console.log('me encontraron');
           }
         });
 
         if (aux === 1) {
-          p1 += `<button class="RemovelikeButton"  data-id="${doc.id}">ya no me gusta</button>`;
+          p1 += `<button class="RemovelikeButton buttonsCard"><i data-id="${doc.id}" class='fa fa-heart' style="color: #FDD835 ; font-size:18px"></i></button>`;
         } else {
-          p1 += `<button class="likeButton"  data-id="${doc.id}">me gusta</button>`;
+          p1 += `<button class="likeButton buttonsCard"><i data-id="${doc.id}" class="fa fa-heart-o" style="font-size:15px"></i></button>`;
         }
 
         htmladd += `
-          <div>
-          <p>  ${post.email} <br> <br> ${post.description}</p>
-          <p> ${post.like.length}</p>
-
-          <section clas="wallButtons">
-                    ${p1}
-                    <button class="deleteButton"  data-id="${doc.id}">Delete</button>
-                    <button class="editButton"  data-id="${doc.id}">Edit</button>
-				    </section>
-          </div>
-				       
-             `;
+          <div class="card">
+          <p class=post> <p class="email"> ${post.email}</p>  <br><br> <P class="description">${post.description}</P> </p>         
+          <section class="wallButtons">
+                    <p class='likeNumber buttonsCard'>${post.like.length}</p>
+                      ${p1}
+                    <button class="editButton buttonsCard"  data-id="${doc.id}">Edit</button>
+                    <button class="deleteButton buttonsCard"  data-id="${doc.id}">Delete</button>
+          </section>
+          </div>    `;
       });
       postContainer.innerHTML = htmladd;
+      // Modal
+      const buttonModal = sectionWall.querySelector('#modalPost');
+      buttonModal.addEventListener('click', () => {
+        divModal.style.opacity = '1';
+        divModal.style.visibility = 'visible';
+      });
+
+      const pClose = sectionWall.querySelector('.close');
+      pClose.addEventListener('click', () => {
+        divModal.style.opacity = '0';
+        divModal.style.visibility = 'hidden';
+      });
+
+      createPost.addEventListener('click', () => {
+        divModal.style.opacity = '0';
+        divModal.style.visibility = 'hidden';
+      });
+
       /* likes */
       const buttonLike = postContainer.querySelectorAll('.likeButton');
       buttonLike.forEach((btn) => {
@@ -125,13 +153,15 @@ export const wall = () => {
           formPost.post.value = postOne.description;
           editStatus = true;
           id = e.target.dataset.id;
+          divModal.style.opacity = '1';
+          divModal.style.visibility = 'visible';
           // formPost.btnPost.innerText = 'Update';
         });
       });
     });
   });
 
- // salir
+  // salir
   logOutButton.addEventListener('click', () => {
     logOut();
     window.location.hash = '';

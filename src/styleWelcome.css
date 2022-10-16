@@ -1,58 +1,52 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-    /* background-image: url(IMG/Montanas-Rocosas-En-Canada-Lago-Louise-Y-Banff-f94e70f.webp); */
-/* } */
 
-/*:root{
-    --button-height:35px;
-    --button-width:35%;
-    --text-field-height:35px;
-    --text-field-width:60%;
-    --color-button:blue;
-    --color-letters:white;
-    --border-radius-text-field-and-button:20px;
-    --size-letters-text-field:15px;
-    --size-letters-button:15px;
-  } */
-
-/*section.wlcm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30%;
+.body{
+	height: 100vh;
+	overflow-y:hidden!important;
    
-}*/
-
- /* .buttonLogin {
-    background: beige;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.buttonRegister {
-    background-color: rgb(243, 239, 239);
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-.a {
-    background-color: rgb(243, 239, 239);
-    font-size: 18px;
-    
+   }
+   #root{
+	width: 100%;
+	height: 100vh;
+   }
+   
+.sectionWelcome{
+	 height: 100vh;
+	 background-color: #4ecad7bf;
+   
 }
 
-
-@media (min-width: 760px) {
+.imgLogoWlcm{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.titleWlcm{
+	margin-top: 40px;
+}
+.wlcm{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+	width: 100%;
 
 }
-
-@media (min-width: 1020px){
-
+.buttonRegister{
+  height:35px;
+  width:35%;
+  border-radius: 20px;
+  background-color: blue;
 
 }
- */
+.buttonLogin{
+  height:35px;
+  width:35%;
+  margin-top: 15px;
+  border-radius: 20px;
+  background-color: blue;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
