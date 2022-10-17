@@ -16,7 +16,7 @@
 }
 
 .register{
-    background-color:#4ecad7bf;
+    background-color:#49d6e5cf;
 	height: 100vmax;
 	width: 100%;
 	opacity: 0.9;
@@ -26,12 +26,13 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 231px;
 }
 .imgLogo{
     height: 230px;
     width: 240px;
     align-self: center;
-    margin-bottom: -30px;
+    margin-top: 30px;
 }
 .Title{
     color: black;
@@ -95,7 +96,7 @@
 
 
 .sectionLogin{
-    background-color:#4ecad7bf;
+    background-color:#49d6e5cf;
 	height: 100vmax;
 	width: 100%;
 	opacity: 0.9; 

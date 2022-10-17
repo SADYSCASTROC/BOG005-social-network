@@ -18,7 +18,7 @@ body{
     justify-content: space-between;
     align-items: center;
 	height: 75px;
-	background-color:#4ecad7bf;
+	background-color:#3cdcedc9;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .imgLogoWall{
@@ -39,7 +39,7 @@ ul{
 }
 #modalPost{
 	border: none;
-	background-color: #4ecad7bf;
+	background-color: #3cdcedc9;
 }
 
 #post{
@@ -55,7 +55,7 @@ ul{
 }
 .wallLogout{
 	border: none;
-	background-color:#4ecad7bf ;
+	background-color:#3cdcedc9 ;
 }
 .modal{
 	opacity: 0;
@@ -90,7 +90,7 @@ ul{
 	display: inline-block;
 	width: 25px;
 	height: 25px;
-	background-color: #4ecad7bf;
+	background-color: #40dbebd4;
 	color: white;
 	line-height: 25px;
 	cursor: pointer;

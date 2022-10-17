@@ -10,8 +10,12 @@
    }
    
 .sectionWelcome{
-	 height: 100vh;
-	 background-color: #4ecad7bf;
+	height: 100vh;
+    background-color: #49d6e5cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 100%;
    
 }
 
@@ -20,7 +24,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 }
+
 .titleWlcm{
 	margin-top: 40px;
 }
@@ -49,4 +55,25 @@
 a{
 	text-decoration: none;
 	color: white;
+}
+
+@media only screen and (min-width:1024px) and (max-width:1440px){
+	.titleWlcm {
+		margin-top: 40px;
+		font-size: 30px;
+	}
+	
+	.buttonLogin{
+		height:35px;
+		width:15%;
+		font-size: 15px;
+
+	}
+
+	.buttonRegister{
+		height:35px;
+		width:15%;
+		font-size: 15px;
+	}
+
 }
