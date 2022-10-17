@@ -4,9 +4,9 @@ export const register = () => {
   const registrar = document.createElement('section');
   registrar.className = 'register';
   registrar.innerHTML = `
-      <div class="container">
+      
                 <figure class="imageDescription">
-	      <img class="imgLogo" src="IMG/Explore.PNG">
+	      <img class="imgLogo" src="IMG/explore.PNG">
                         <h1 class="Title">Register</h1>
                 </figure>
                 <form action=""  id="registerForm" class="Form">
