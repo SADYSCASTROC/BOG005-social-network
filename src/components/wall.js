@@ -1,6 +1,8 @@
 /* eslint-disable no-tabs */
 import {
-  savePost, onGetPost, deletePost, getPostOne, updatePost, logOut, auth, likePost, DeletelikePost,
+  savePost, onGetPost, deletePost, getPostOne, updatePost, logOut,
+  auth, likePost, DeletelikePost,
+
 } from '../lib/firebase/firebaseService.js';
 
 export const wall = () => {
@@ -45,8 +47,10 @@ export const wall = () => {
     e.preventDefault();
 
     if (!editStatus) {
-      savePost(descriptionPost.value);
-    } else {
+      if (descriptionPost.value !== '') {
+        savePost(descriptionPost.value);
+      }
+    } else if (descriptionPost.value !== '') {
       updatePost(id, {
         description: descriptionPost.value,
       });
@@ -71,6 +75,8 @@ export const wall = () => {
         // eslint-disable-next-line array-callback-return
         post.like.map((index) => {
           if (index === auth.currentUser.uid) {
+            console.log(auth.currentUser.uid);
+
             aux = 1;
           }
         });
@@ -107,8 +113,13 @@ export const wall = () => {
       });
 
       createPost.addEventListener('click', () => {
-        divModal.style.opacity = '0';
-        divModal.style.visibility = 'hidden';
+        if (descriptionPost.value === '') {
+          alert('el campo esta vacio');
+          return;
+        } if (descriptionPost.value !== '') {
+          divModal.style.opacity = '0';
+          divModal.style.visibility = 'hidden';
+        }
       });
 
       /* likes */
@@ -165,7 +176,8 @@ export const wall = () => {
   logOutButton.addEventListener('click', () => {
     logOut();
     window.location.hash = '';
-     location.reload();
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
   });
 
   return sectionWall;

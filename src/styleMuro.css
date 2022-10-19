@@ -10,7 +10,7 @@ body{
 
 .sectionWall{
 	height: 100vh;
-	background-color: rgba(185, 186, 186, 0.905);
+	background-image: url(IMG/Fondo\ de\ Pantalla\ para\ Celular\ Motivacional\ Azul\ de\ Nubes\ \(2\).png);
 
 }
 .headerWall{
@@ -105,6 +105,10 @@ ul{
 .walltitle{
 	margin-top: 15px;
     text-align: center;
+    text-shadow: 1px 2px 2px;
+    font-family: emoji;
+    color: #20232496;
+
 }
 #createPost{
 	height: 73vh;
@@ -133,9 +137,8 @@ ul{
     flex-direction: column;
     width: 80%;
     height: auto;
-    border: 5px solid rgba(185, 186, 186, 0.905);
     border-radius: 20px;
-    box-shadow: rgb(192 191 191 / 20%) 0px 2px 8px 0px;
+	margin: 8px;
 }
 .likeButton{
 	margin-left: -37px;
@@ -151,7 +154,9 @@ ul{
 }
 .description{
 	margin-top: -20px;
-    margin-left: 15px;}
+    margin-left: 15px;
+	color: #545a5a;
+}
 .email{
 	text-align: center;
     margin-top: -19px;
