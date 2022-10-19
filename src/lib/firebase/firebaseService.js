@@ -1,12 +1,11 @@
-/* eslint-disable max-len */
-/* eslint-disable import/no-unresolved */
-
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider,
   signInWithPopup, signOut,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import {
 
+  // eslint-disable-next-line max-len
   addDoc, collection, getFirestore, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc, arrayUnion, arrayRemove,
 
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
@@ -40,7 +39,7 @@ const db = getFirestore();
 export const logOut = () => signOut(auth);
 
 // guardar publicacion, correo y uaid
-export const savePost = (description, like) => {
+export const savePost = (description) => {
   if (currentUser) {
     const email = auth.currentUser.email;
     const uid = auth.currentUser.uid;

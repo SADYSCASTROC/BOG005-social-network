@@ -40,6 +40,10 @@ ul{
 #modalPost{
 	border: none;
 	background-color: #3cdcedc9;
+	height: 20px;
+}
+.iconoPost{
+	font-size: 20px;
 }
 
 #post{
@@ -56,6 +60,7 @@ ul{
 .wallLogout{
 	border: none;
 	background-color:#3cdcedc9 ;
+	height: 20px;
 }
 .modal{
 	opacity: 0;
@@ -154,4 +159,38 @@ ul{
 }
 .buttonsCard{
 	margin-top: 10px;
+	border: none;
+	background-color: white;
+}
+.editButton{
+	margin-left: 15px;
+}
+.deleteButton{
+	margin-right: 10px;
+}
+.likeNumber{
+	margin-top: 15px;
+}
+@media only screen and (min-width:1024px) and (max-width:1440px){
+    ul {
+		width: 30%;
+		justify-content: space-evenly;
+	}
+	.card {
+		width: 40%;
+	}
+
+	.wallButtons {
+		margin-top: 30px;
+		justify-content: space-evenly;
+
+	}
+	.likeNumber {
+		margin-right: -35px;
+	}
+	
+	.divModal {
+		width: 40%;
+		height: 40%;
+	}
 }

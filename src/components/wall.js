@@ -11,8 +11,8 @@ export const wall = () => {
 	<header class="headerWall">
 	   <img class="imgLogoWall" src="IMG/explore.PNG">
      <ul>
-     <li><button id="modalPost">new post</button></li>
-     <li><button class="wallLogout">Sign off</button></li>
+     <li><button id="modalPost"> <i class="material-icons iconoPost">post_add</i></button></li>
+     <li><button class="wallLogout"> <i class="material-icons">logout</i></button></li>
      </ul>
   </header>
   <h1 class="walltitle">Tell your experience</h1> 
@@ -23,7 +23,7 @@ export const wall = () => {
     <p class="close">X</p>
 		<form class="formWall" >
 			<textarea type="text" id="post"></textarea>
-			<button type="submit" id="btnPost">Post</button>
+			<button type="submit" id="btnPost"><i class="material-icons">save_as</i></button></button>
 		</form>
     </div>
   </div>
@@ -87,8 +87,8 @@ export const wall = () => {
           <section class="wallButtons">
                     <p class='likeNumber buttonsCard'>${post.like.length}</p>
                       ${p1}
-                    <button class="editButton buttonsCard"  data-id="${doc.id}">Edit</button>
-                    <button class="deleteButton buttonsCard"  data-id="${doc.id}">Delete</button>
+                    <button class="editButton buttonsCard"> <i  data-id="${doc.id}" class="material-icons">edit</i></button>
+                    <button class="deleteButton buttonsCard"><i data-id="${doc.id}" class="material-icons">delete</i></button>
           </section>
           </div>    `;
       });
@@ -165,7 +165,7 @@ export const wall = () => {
   logOutButton.addEventListener('click', () => {
     logOut();
     window.location.hash = '';
-    location.reload();
+     location.reload();
   });
 
   return sectionWall;
